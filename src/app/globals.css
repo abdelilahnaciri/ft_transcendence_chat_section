@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+    --font-montserrat: 'Montserrat', sans-serif;
+  }
+  
+
+body{
+    background-image: url('/images/background.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    font-family: var(--font-montserrat);
+}
