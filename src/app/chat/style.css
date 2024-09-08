@@ -2,270 +2,281 @@
     padding: 15px;
 } */
 .parent {
-    height: 100%;
-  }
-  .chat-section {
-    /* background: orange; */
-    width: 100%;
-    height: 100%;
-    padding: 60px;
-  }
-  .boxes {
-    /* background-color: blueviolet; */
-    width: 100%;
-    height: 100%;
-    /* border: 3px solid #ddd; */
-    border-radius: 15px;
-    display: flex;
-    justify-content: center;
-    padding: 5px;
-    position: relative;
-  }
-  .boxes::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(-90deg, #e6e6ff 0%, #cfdafe 100%);
-    left: 1.5px;
-    top: 1.5px;
-    border-radius: 10px;
-    z-index: -1;
-    box-shadow: 1px 1px 5px 3px #b6b6b6;
-  }
-  /* Start Friends Box Infos */
-  /* Start Profil Infos */
-  .chat-section .boxes .friends-box {
-    background-color: #f2f3ff;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-    padding: 50px 30px;
-    border-right: 1px solid #919bbe;
-    flex-basis: 30%;
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-    position: relative;
-  }
-  .chat-section .boxes .friends-box::before {
-    position: absolute;
-    content: "";
-    width: 50%;
-    height: 1px;
-    background-color: #7684b8;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 50px;
-  }
-  .chat-section .friends-box .profil-infos {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    /* margin-bottom: 50px; */
-  }
-  .friends-box .profil-infos .image {
-    width: fit-content;
-    height: fit-content;
-    position: relative;
-  }
-  .friends-box .profil-infos .image::before {
-    position: absolute;
-    content: "";
-    width: 10px;
-    height: 10px;
-    background-color: #07c605;
-    border-radius: 50%;
-    right: 10%;
-    bottom: 6%;
-  }
-  .friends-box .profil-infos .image img {
-    max-width: 100%;
-    width: 80px;
-  }
-  
-  .friends-box .profil-infos .infos {
-  }
-  .friends-box .profil-infos .infos h3 {
-    font-family: "__Montserrat_b1da2a", "__Montserrat_Fallback_b1da2a";
-    font-size: 18px;
-    color: #242f5c;
-    font-weight: 700;
-  }
-  .friends-box .profil-infos .infos span {
-    color: #8c8bd0;
-  }
-  .chat-section .friends-box h2 {
-    font-size: 20px;
-    font-weight: bold;
-    color: #242f5c;
-    border-bottom: 1px solid #8c8bd0;
-    width: fit-content;
-    margin: 0 auto;
-    letter-spacing: 0.5px;
-  }
-  /* End Profil Infos */
-  /* Start Messages List */
-  .chat-section .friends-box .messages-list {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    height: 100%;
-    overflow: auto;
-    padding: 15px 5px;
-    /* position: relative; */
-  }
-  .chat-section .friends-box .messages-list::-webkit-scrollbar {
-    width: 6px;
-    height: 5px;
-  }
-  .chat-section .friends-box .messages-list::-webkit-scrollbar-track {
-    background-color: #dcdffd;
-  }
-  .chat-section .friends-box .messages-list::-webkit-scrollbar-thumb {
-    background-color: #242f5c;
-  }
-  
-  .chat-section .friends-box .friend-info {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-  }
-  .chat-section .friends-box .image {
-    /* width: fit-content;
+  height: 100%;
+}
+.chat-section {
+  /* background: orange; */
+  width: 100%;
+  height: 100%;
+  padding: 60px;
+}
+.boxes {
+  /* background-color: blueviolet; */
+  width: 100%;
+  height: 100%;
+  /* border: 3px solid #ddd; */
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+  position: relative;
+}
+.boxes::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(-90deg, #e6e6ff 0%, #cfdafe 100%);
+  left: 1.5px;
+  top: 1.5px;
+  border-radius: 10px;
+  z-index: -1;
+  box-shadow: 1px 1px 5px 3px #b6b6b6;
+}
+/* Start Friends Box Infos */
+/* Start Profil Infos */
+.chat-section .boxes .friends-box {
+  background-color: #f2f3ff;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  padding: 50px 30px;
+  border-right: 1px solid #919bbe;
+  flex-basis: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  transition: 0.3s;
+  position: relative;
+}
+.chat-section .boxes .friends-box::before {
+  position: absolute;
+  content: "";
+  width: 50%;
+  height: 1px;
+  background-color: #7684b8;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 50px;
+}
+.chat-section .boxes .friends-box .menu-list {
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  position: relative;
+  transition: 0.5s;
+}
+.chat-section .friends-box .profil-infos {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  /* margin-bottom: 50px; */
+}
+.friends-box .profil-infos .image {
+  width: fit-content;
+  height: fit-content;
+  position: relative;
+}
+.friends-box .profil-infos .image::before {
+  position: absolute;
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-color: #07c605;
+  border-radius: 50%;
+  right: 10%;
+  bottom: 6%;
+}
+.friends-box .profil-infos .image img {
+  max-width: 100%;
+  width: 80px;
+}
+
+.friends-box .profil-infos .infos {
+}
+.friends-box .profil-infos .infos h3 {
+  font-family: "__Montserrat_b1da2a", "__Montserrat_Fallback_b1da2a";
+  font-size: 18px;
+  color: #242f5c;
+  font-weight: 700;
+}
+.friends-box .profil-infos .infos span {
+  color: #8c8bd0;
+}
+.chat-section .friends-box h2 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #242f5c;
+  border-bottom: 1px solid #8c8bd0;
+  width: fit-content;
+  margin: 0 auto;
+  letter-spacing: 0.5px;
+}
+/* End Profil Infos */
+/* Start Messages List */
+.chat-section .friends-box .messages-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  height: 100%;
+  overflow: auto;
+  padding: 15px 5px;
+  /* position: relative; */
+}
+.chat-section .friends-box .messages-list::-webkit-scrollbar {
+  width: 6px;
+  height: 5px;
+}
+.chat-section .friends-box .messages-list::-webkit-scrollbar-track {
+  background-color: #dcdffd;
+}
+.chat-section .friends-box .messages-list::-webkit-scrollbar-thumb {
+  background-color: #242f5c;
+}
+
+.chat-section .friends-box .friend-info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.chat-section .friends-box .image {
+  /* width: fit-content;
     width: fit-content; */
-  }
-  .chat-section .friend-info .image img {
-    width: 60px;
-    max-width: 100%;
-  }
-  .chat-section .friends-box .infos {
-    position: relative;
-    flex: 1;
-  }
-  .chat-section .friends-box .infos h3 {
-    font-size: 19px;
-    font-weight: 700;
-    color: #242f5c;
-    letter-spacing: 0.5px;
-  }
-  .chat-section .friends-box .infos .msg-info {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .chat-section .friends-box .infos .msg-info .last-msg {
-    font-size: 14px;
-    color: #242f5c;
-  }
-  .chat-section .friends-box .infos .msg-info .msg-status {
-    width: 10px;
-    height: 10px;
-    background-color: #10107b;
-    border-radius: 50%;
-    align-self: start;
-  }
-  .chat-section .friends-box .infos .msg-time {
-    position: absolute;
-    right: 0;
-    top: 0;
-    color: #8b8b8b;
-    font-size: 12px;
-    font-weight: 300;
-  }
-  /* End Messages List */
-  /* Start Friends Box Infos */
-  /* Start Messages Box */
-  .chat-section .boxes .messages-box {
-    /* background-color: yellow; */
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    padding: 50px 30px;
-    width: 100%;
-    background-color: #f2f3ff;
-  }
-  .boxes .messages-box .friend-infos {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 50px;
-    position: relative;
-  }
-  .boxes .messages-box .friend-infos::before {
-    position: absolute;
-    content: "";
-    width: 90%;
-    height: 1px;
-    background-color: #7684b8;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 0;
-  }
-  .boxes .messages-box .his-profil {
-    display: flex;
-    gap: 25px;
-    align-items: center;
-  }
-  
-  .boxes .his-profil .image {
-  }
-  .boxes .his-profil .image img {
-    width: 80px;
-    max-width: 100%;
-  }
-  .boxes .his-profil .infos {
-  }
-  .boxes .his-profil .infos h3 {
-    font-size: 22px;
-    font-weight: 600;
-    color: #242f5c;
-    font-family: "__Montserrat_b1da2a", "__Montserrat_Fallback_b1da2a";
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* letter-spacing: 0.5px; */
-  }
-  .boxes .his-profil .infos h3 .status-icon {
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    margin-left: 10px;
-    background-color: #07c605;
-  }
-  .boxes .his-profil .infos .status {
-    color: #8c8bd0;
-    position: relative;
-    top: -5px;
-  }
-  .boxes .messages-box .bottom-icon {
-    left: -80px;
-    cursor: pointer;
-    position: relative;
-    font-size: 30px;
-  }
-  /* Start Peer To Peer */
-  .boxes .messages-box .peer-to-peer {
-    padding: 20px 0;
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-    width: 100%;
-    height: 100%;
-    padding: 60px;
-    max-height: 800px;
-    overflow: auto;
-  }
-  .boxes .messages-box .peer-to-peer::-webkit-scrollbar {
-    width: 6px;
-    height: 5px;
-  }
-  .boxes .messages-box .peer-to-peer::-webkit-scrollbar-track {
-    background-color: #dcdffd;
-  }
-  .boxes .messages-box .peer-to-peer::-webkit-scrollbar-thumb {
-    background-color: #242f5c;
-  }
-  /* .boxes .peer-to-peer .friend-msg {
+}
+.chat-section .friend-info .image img {
+  width: 60px;
+  max-width: 100%;
+}
+.chat-section .friends-box .infos {
+  position: relative;
+  flex: 1;
+}
+.chat-section .friends-box .infos h3 {
+  font-size: 19px;
+  font-weight: 700;
+  color: #242f5c;
+  letter-spacing: 0.5px;
+}
+.chat-section .friends-box .infos .msg-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.chat-section .friends-box .infos .msg-info .last-msg {
+  font-size: 14px;
+  color: #242f5c;
+}
+.chat-section .friends-box .infos .msg-info .msg-status {
+  width: 10px;
+  min-width: 10px;
+  height: 10px;
+  background-color: #10107b;
+  border-radius: 50%;
+  align-self: start;
+}
+.chat-section .friends-box .infos .msg-time {
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: #8b8b8b;
+  font-size: 12px;
+  font-weight: 300;
+}
+/* End Messages List */
+/* Start Friends Box Infos */
+/* Start Messages Box */
+.chat-section .boxes .messages-box {
+  /* background-color: yellow; */
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 50px 30px;
+  width: 100%;
+  background-color: #f2f3ff;
+}
+.boxes .messages-box .friend-infos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 50px;
+  position: relative;
+}
+.boxes .messages-box .friend-infos::before {
+  position: absolute;
+  content: "";
+  width: 90%;
+  height: 1px;
+  background-color: #7684b8;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+}
+.boxes .messages-box .his-profil {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+.boxes .his-profil .image {
+}
+.boxes .his-profil .image img {
+  width: 80px;
+  max-width: 100%;
+}
+.boxes .his-profil .infos {
+}
+.boxes .his-profil .infos h3 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #242f5c;
+  font-family: "__Montserrat_b1da2a", "__Montserrat_Fallback_b1da2a";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* letter-spacing: 0.5px; */
+}
+.boxes .his-profil .infos h3 .status-icon {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-left: 10px;
+  background-color: #07c605;
+}
+.boxes .his-profil .infos .status {
+  color: #8c8bd0;
+  position: relative;
+  top: -5px;
+}
+.boxes .messages-box .bottom-icon {
+  left: -80px;
+  cursor: pointer;
+  position: relative;
+  font-size: 30px;
+}
+/* Start Peer To Peer */
+.boxes .messages-box .peer-to-peer {
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  width: 100%;
+  height: 100%;
+  padding: 60px;
+  max-height: 800px;
+  overflow: auto;
+}
+.boxes .messages-box .peer-to-peer::-webkit-scrollbar {
+  width: 6px;
+  height: 5px;
+}
+.boxes .messages-box .peer-to-peer::-webkit-scrollbar-track {
+  background-color: #dcdffd;
+}
+.boxes .messages-box .peer-to-peer::-webkit-scrollbar-thumb {
+  background-color: #242f5c;
+}
+/* .boxes .peer-to-peer .friend-msg {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -276,80 +287,317 @@
     font-size: 14px;
     font-weight: 300;
   } */
-  .boxes .peer-to-peer .friend-msg-box {
+.boxes .peer-to-peer .friend-msg-box {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  gap: 20px;
+}
+.boxes .peer-to-peer .friend-msg-box .image {
+  align-self: flex-end;
+}
+.boxes .peer-to-peer .friend-msg-box .image img {
+  max-width: 100%;
+  width: 60px;
+}
+.boxes .peer-to-peer .friend-msg-box .msg {
+  position: relative;
+}
+.boxes .peer-to-peer .friend-msg-box .msg span {
+  position: relative;
+  left: 25px;
+  color: #8b8b8b;
+  font-size: 14px;
+  font-weight: 300;
+}
+.boxes .peer-to-peer .friend-msg-box .msg p {
+  background-color: #6573a9;
+  color: #fff;
+  padding: 20px;
+  font-family: "__Montserrat_b1da2a", "__Montserrat_Fallback_b1da2a";
+  border-radius: 30px;
+  max-width: 360px;
+}
+/* Start My Msg Box */
+.boxes .peer-to-peer .my-msg-box {
+  align-self: flex-end;
+}
+.boxes .peer-to-peer .my-msg-box .msg {
+  background-color: #dbdbfe;
+  padding: 20px;
+  font-family: "__Montserrat_b1da2a", "__Montserrat_Fallback_b1da2a";
+  border-radius: 30px;
+  max-width: 360px;
+  overflow-wrap: anywhere;
+}
+/* End My Msg Box */
+/* End Peer To Peer */
+/* Start Send Msg */
+.boxes .messages-box .send-msg {
+  margin-top: 50px;
+  position: relative;
+}
+.boxes .messages-box .send-msg input {
+  width: 100%;
+  padding: 20px;
+  padding-right: 65px;
+  border-radius: 50px;
+  background-color: #e0e1f7;
+}
+.boxes .messages-box .send-msg input:focus {
+  outline: none;
+}
+.boxes .messages-box .send-msg input::placeholder {
+  font-size: 20px;
+  font-family: "__Montserrat_b1da2a", "__Montserrat_Fallback_b1da2a";
+  font-weight: 300;
+  color: #656c8f;
+}
+.boxes .messages-box .send-msg .send-msg {
+  position: absolute;
+  right: 25px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 30px;
+  margin: 0;
+  color: #61688e;
+  cursor: pointer;
+}
+/* End Send Msg */
+/* End Messages Box */
+
+/* Start Responsive */
+.chat-section .friends-box .toggle-menu {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  display: none;
+}
+@media (max-width: 1800px) {
+  .chat-section .boxes .friends-box {
+    padding: 50px 15px;
+  }
+  .chat-section .friends-box .friend-info {
+    gap: 10px;
+  }
+  .chat-section .friends-box .infos h3 {
+    font-size: 16px;
+  }
+  .chat-section .friends-box .infos .msg-info .last-msg {
+    font-size: 13px;
+  }
+}
+@media (max-width: 1700px) {
+  .chat-section .boxes .friends-box {
+    flex-basis: 0;
+    min-width: 100px;
     display: flex;
-    /* justify-content: center; */
     align-items: center;
-    gap: 20px;
+    position: unset;
   }
-  .boxes .peer-to-peer .friend-msg-box .image {
-    align-self: flex-end;
+  .chat-section .boxes .friends-box::before {
+    display: none;
   }
-  .boxes .peer-to-peer .friend-msg-box .image img {
-    max-width: 100%;
-    width: 60px;
+  .chat-section .friends-box .toggle-menu {
+    display: block;
   }
-  .boxes .peer-to-peer .friend-msg-box .msg {
-    position: relative;
-  }
-  .boxes .peer-to-peer .friend-msg-box .msg span {
-    position: relative;
-    left: 25px;
-    color: #8b8b8b;
-    font-size: 14px;
-    font-weight: 300;
-  }
-  .boxes .peer-to-peer .friend-msg-box .msg p {
-    background-color: #6573a9;
-    color: #fff;
+  .chat-section .boxes .friends-box .menu-list {
+    display: flex;
+    position: absolute;
+    width: calc(100% - 10px);
+    height: calc(100% - 150px);
+    left: -85%;
+    bottom: 5px;
+    z-index: 999;
+    background: #f7f7ff;
     padding: 20px;
-    font-family: "__Montserrat_b1da2a", "__Montserrat_Fallback_b1da2a";
-    border-radius: 30px;
-    max-width: 360px;
+    border-radius: 10px;
+    border-top-left-radius: 0;
+    align-items: center;
+    opacity: 0;
+    transition: 0.2s;
+    box-shadow: 0 0 15px 0 #c1a7e5e0;
+    border: 1px solid #b2b2b2;
+    border-left: none;
   }
-  /* Start My Msg Box */
-  .boxes .peer-to-peer .my-msg-box {
-    align-self: flex-end;
+  .chat-section .boxes {
+    position: relative;
+    overflow: hidden;
+  }
+  .chat-section .friends-box .menu-list.active {
+    opacity: 1;
+    left: 5px;
+  }
+  .chat-section .friends-box .messages-list {
+    width: 60%;
+  }
+  /* .chat-section .friends-box .profil-infos,
+  .chat-section .friends-box h2,
+  .chat-section .friends-box .messages-list {
+    display: none;
+  }
+  .chat-section .friends-box div {
+    display: none;
+  }
+  .chat-section .boxes .friends-box {
+    flex: 1;
+  }
+  .chat-section .friends-box .toggle-menu:hover ~ div {
+    background-color: red;
+    display: block;
+    position: relative;
+  } */
+}
+@media (max-width: 991px) {
+  .chat-section {
+    padding: 30px;
+  }
+  .chat-section .boxes .friends-box {
+    min-width: 80px;
+  }
+  .chat-section .friends-box .messages-list {
+    width: 100%;
+  }
+  .chat-section .boxes .friends-box {
+    padding: 50px 15px;
+  }
+  .chat-section .friends-box .messages-list::-webkit-scrollbar {
+    width: 2px;
+    height: 5px;
+  }
+  .chat-section .boxes .messages-box {
+    padding: 50px 10px;
+  }
+  .boxes .messages-box .peer-to-peer {
+    padding: 10px;
+  }
+  .boxes .peer-to-peer .friend-msg-box .msg p,
+  .boxes .peer-to-peer .my-msg-box .msg {
+    max-width: 250px;
+    padding: 15px;
+  }
+  .boxes .messages-box .peer-to-peer::-webkit-scrollbar {
+    width: 2px;
+    height: 5px;
+  }
+  /* Side Bar Responsive */
+  .sidebar {
+    width: fit-content;
+    padding: 15px;
+  }
+  .sidebar ul li a {
+    justify-content: center;
+  }
+  .sidebar ul li a img {
+    margin: 0;
+    width: 35px;
+  }
+  .sidebar .tooltip {
+    display: none;
+  }
+  .sidebar .footer-profil .profil-img {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .sidebar .footer-profil p,
+  .logout-icon {
+    display: none;
+  }
+}
+@media (max-width: 676px) {
+  .chat-section {
+    padding: 15px;
+  }
+  .chat-section .boxes .friends-box {
+    padding: 50px 5px;
+  }
+  .chat-section .boxes .friends-box {
+    min-width: 30px;
+  }
+  .chat-section .friends-box .infos h3 {
+    font-size: 14px;
+  }
+  .chat-section .friend-info .image img {
+    width: 35px;
+  }
+  .friends-box .profil-infos .infos span {
+    font-size: 12px;
+  }
+  .chat-section .friends-box .infos .msg-time {
+    font-size: 10px;
+  }
+  .chat-section .friends-box .infos .msg-info .msg-status {
+    width: 5px;
+    min-width: 5px;
+    height: 5px;
+  }
+  .boxes .messages-box .his-profil {
+    gap: 10px;
+  }
+  .boxes .his-profil .image img {
+    width: 35px;
+  }
+  .boxes .his-profil .infos h3 {
+    font-size: 14px;
+  }
+  .boxes .his-profil .infos .status {
+    font-size: 10px;
+  }
+  .boxes .his-profil .infos h3 .status-icon {
+    width: 5px;
+    height: 5px;
+    margin-left: 5px;
+  }
+  .boxes .messages-box .bottom-icon {
+    left: -10px;
+    font-size: 16px;
+  }
+  .boxes .messages-box .peer-to-peer {
+    gap: 25px;
+  }
+  .chat-section .friends-box .toggle-menu {
+    width: 22px;
+  }
+  .boxes .peer-to-peer .friend-msg-box {
+    gap: 5px;
   }
   .boxes .peer-to-peer .my-msg-box .msg {
-    background-color: #dbdbfe;
-    padding: 20px;
-    font-family: "__Montserrat_b1da2a", "__Montserrat_Fallback_b1da2a";
-    border-radius: 30px;
-    max-width: 360px;
+    padding: 10px;
+    font-size: 12px;
   }
-  /* End My Msg Box */
-  /* End Peer To Peer */
-  /* Start Send Msg */
-  .boxes .messages-box .send-msg {
-    margin-top: 50px;
-    position: relative;
+  .boxes .peer-to-peer .friend-msg-box .msg span {
+    font-size: 10px;
+  }
+  .boxes .peer-to-peer .friend-msg-box .msg p {
+    padding: 10px;
+    font-size: 12px;
+  }
+  .boxes .peer-to-peer .friend-msg-box .image img {
+    width: 35px;
   }
   .boxes .messages-box .send-msg input {
     width: 100%;
-    padding: 20px;
-    border-radius: 50px;
-    background-color: #e0e1f7;
-  }
-  .boxes .messages-box .send-msg input:focus {
-    outline: none;
+    padding: 10px;
+    font-size: 12px;
+    padding-left: 15px;
+    padding-right: 45px;
   }
   .boxes .messages-box .send-msg input::placeholder {
-    font-size: 20px;
-    font-family: "__Montserrat_b1da2a", "__Montserrat_Fallback_b1da2a";
-    font-weight: 300;
-    color: #656c8f;
+    font-size: 14px;
   }
   .boxes .messages-box .send-msg .send-msg {
-    position: absolute;
-    right: 25px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 30px;
-    margin: 0;
-    color: #61688e;
-    cursor: pointer;
+    font-size: 16px;
   }
-  /* End Send Msg */
-  /* End Messages Box */
-  
+  /* Side Bar Responsive */
+  .sidebar {
+    width: fit-content;
+    padding: 5px;
+  }
+  .sidebar ul li a img {
+    margin: 0;
+    width: 20px;
+    min-width: 15px;
+  }
+}
+/* End Responsive */
