@@ -193,12 +193,15 @@
   padding: 50px 30px;
   width: 100%;
   background-color: #f2f3ff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .boxes .messages-box .friend-infos {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 50px;
+  padding-bottom: 20px;
   position: relative;
 }
 .boxes .messages-box .friend-infos::before {
@@ -248,21 +251,65 @@
   position: relative;
   top: -5px;
 }
-.boxes .messages-box .bottom-icon {
+.boxes .messages-box .drop-down {
   left: -80px;
-  cursor: pointer;
   position: relative;
+  /* overflow: hidden; */
+}
+.boxes .messages-box .bottom-icon {
+  cursor: pointer;
   font-size: 30px;
 }
+.boxes .messages-box .drop-down .list {
+  position: absolute;
+  background-color: #eaeaff;
+  width: 145px;
+  border: 1px solid #ced0e2;
+  border-radius: 15px;
+  right: 100%;
+  z-index: 99;
+  /* transform: translateX(-50%); */
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  transition: 0.1s ease-out;
+}
+.boxes .messages-box .drop-down .list.active {
+  opacity: 1;
+  height: auto;
+  padding: 10px;
+}
+.boxes .drop-down .list li {
+  padding: 5px 0;
+  cursor: pointer;
+}
+.boxes .drop-down .list li:last-child {
+  padding-bottom: 0;
+}
+.boxes .drop-down .list li:not(:last-child) {
+  border-bottom: 1px solid #ced0e2;
+}
+.boxes .drop-down .list a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "__Montserrat_b1da2a", "__Montserrat_Fallback_b1da2a";
+  font-weight: 600;
+  color: #242f5c;
+}
+
 /* Start Peer To Peer */
 .boxes .messages-box .peer-to-peer {
   padding: 20px 0;
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 10px;
   width: 100%;
   height: 100%;
-  padding: 60px;
+  padding: 15px;
   max-height: 800px;
   overflow: auto;
 }
@@ -334,7 +381,6 @@
 /* End Peer To Peer */
 /* Start Send Msg */
 .boxes .messages-box .send-msg {
-  margin-top: 50px;
   position: relative;
 }
 .boxes .messages-box .send-msg input {
@@ -549,8 +595,10 @@
     height: 5px;
     margin-left: 5px;
   }
-  .boxes .messages-box .bottom-icon {
+  .boxes .messages-box .drop-down {
     left: -10px;
+  }
+  .boxes .messages-box .bottom-icon {
     font-size: 16px;
   }
   .boxes .messages-box .peer-to-peer {
