@@ -5,21 +5,31 @@ import Navbar_test from "./components/navbar"; // import the real one as a compo
 import { FaAngleDown } from "react-icons/fa";
 import { RiSendPlaneLine } from "react-icons/ri";
 import { RxHamburgerMenu } from "react-icons/rx";
+import { CgProfile } from "react-icons/cg";
+import { FaGamepad } from "react-icons/fa";
+import { MdBlock } from "react-icons/md";
 import "./style.css";
 import { useState } from "react";
 
 // Import UseState to toggle friends box
 
 export default function ChatPage() {
-  function activeShow() {
-    const tog = document.getElementsByClassName("menu-list");
-    tog[0].classList.toggle("active");
+  function activeShow(e) {
+    // console.log(e.currentTarget);
+    if (e.currentTarget.className === "drop-down") {
+      const list = document.querySelector("ul.list");
+      list.classList.toggle("active");
+    } else {
+      const tog = document.getElementsByClassName("menu-list");
+      tog[0].classList.toggle("active");
+    }
   }
   let mymsgbox;
   function sendMsg(e) {
     // console.log(e);
     if (e.code === "Enter" || e.type === "click") {
       let inputText = document.getElementsByClassName("msg-to-send");
+      console.log(inputText);
       if (inputText[0].value.trim() !== "") {
         mymsgbox = document.createElement("div");
         let peertopeer = document.getElementsByClassName("peer-to-peer");
@@ -55,7 +65,10 @@ export default function ChatPage() {
         <div className="chat-section">
           <div className="boxes">
             <div className="friends-box">
-              <RxHamburgerMenu className="toggle-menu" onClick={activeShow} />
+              <RxHamburgerMenu
+                className="toggle-menu"
+                onClick={(e) => activeShow(e)}
+              />
               <div className="menu-list">
                 <div className="profil-infos">
                   <div className="image">
@@ -266,7 +279,29 @@ export default function ChatPage() {
                     <span className="status">Online</span>
                   </div>
                 </div>
-                <FaAngleDown className="bottom-icon" />
+                <div className="drop-down" onClick={(e) => activeShow(e)}>
+                  <FaAngleDown className="bottom-icon" />
+                  <ul className="list">
+                    <li>
+                      <a className="go-profile">
+                        <CgProfile />
+                        <span>Profile</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a className="go-play-w-me">
+                        <FaGamepad />
+                        <span>Play With</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a className="block-it">
+                        <MdBlock />
+                        <span>Block</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
               </div>
               <div className="peer-to-peer">
                 <div className="friend-msg-box">
